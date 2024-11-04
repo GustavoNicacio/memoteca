@@ -1,0 +1,22 @@
+{
+  "personagem": [
+    {
+      "id": "1",
+      "conteudo": "Obrigado Mainstream!",
+      "modelo": "modelo1",
+      "autoria": "Febem"
+    },
+    {
+      "id": "2",
+      "conteudo": "Vai Corinthians!",
+      "modelo": "modelo1",
+      "autoria": "Fleezus"
+    },
+    {
+      "id": "3",
+      "conteudo": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec.",
+      "modelo": "modelo2",
+      "autoria": "Imperador Adriano"
+    }
+  ]
+}
