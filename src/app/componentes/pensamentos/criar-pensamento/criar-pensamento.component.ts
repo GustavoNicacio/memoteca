@@ -11,7 +11,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CriarPensamentoComponent implements OnInit {
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> development
   formulario!: FormGroup
 
   constructor(
@@ -21,6 +24,7 @@ export class CriarPensamentoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+<<<<<<< HEAD
     this.formulario = this.formBuilder.group({
       conteudo: ['', Validators.compose([
         Validators.required,
@@ -33,10 +37,28 @@ export class CriarPensamentoComponent implements OnInit {
         Validators.minLength(3)
       ])],
       modelo: ['modelo1', [Validators.required]]
+=======
+
+    this.formulario = this.formBuilder.group({
+
+      conteudo: ['', Validators.compose([
+        Validators.required,
+        Validators.pattern(/(.|\s)*\S(.|\s)*/),
+      ])],
+
+      autoria: ['', Validators.compose([
+        Validators.required,
+        Validators.pattern(/(.|\s)*\S(.|\s)*/),
+        Validators.minLength(3)
+      ])],
+
+      modelo: ['modelo1']
+>>>>>>> development
     })
   }
 
   criarPensamento() {
+<<<<<<< HEAD
     console.log(this.formulario.status)
     if (this.formulario.valid){
 
@@ -45,6 +67,12 @@ export class CriarPensamentoComponent implements OnInit {
       })
 
     }
+=======
+    this.service.criar(this.formulario.value).subscribe(() => {
+      this.router.navigate(['/listarPensamento'])
+    })
+
+>>>>>>> development
   }
 
   cancelar() {

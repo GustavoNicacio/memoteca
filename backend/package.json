@@ -1,7 +1,10 @@
 {
   "name": "backend",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "",
+=======
+>>>>>>> development
   "main": "index.js",
   "scripts": {
     "start": "json-server --watch db.json --port 3000"
@@ -9,7 +12,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+<<<<<<< HEAD
   "dependencies": {
     "json-server": "^0.17.0"
+=======
+  "description": "",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3"
+>>>>>>> development
   }
 }

@@ -9,7 +9,11 @@
     {
       "id": "2",
       "conteudo": "Na minha máquina funciona!",
+<<<<<<< HEAD
       "autoria": "Dev da madrugada",
+=======
+      "autoria": "Dev Jhow",
+>>>>>>> development
       "modelo": "modelo2"
     },
     {
@@ -19,6 +23,7 @@
       "modelo": "modelo3"
     },
     {
+<<<<<<< HEAD
       "conteudo": "Testando função de editar",
       "autoria": "Angular ",
       "modelo": "modelo2",
@@ -35,6 +40,12 @@
       "conteudo": "A dona aranha subiu pela parede.",
       "autoria": "Brasileiro Comum ",
       "modelo": "modelo1"
+=======
+      "id": "e4b7",
+      "conteudo": "A dona aranha subiu pela parede.",
+      "autoria": "Renato Alisson",
+      "modelo": "modelo2"
+>>>>>>> development
     }
   ]
 }
