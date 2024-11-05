@@ -25,6 +25,17 @@
       placeholder="Digite o(a) autor(a)"
     />
 
+    <label for="data">Data</label>
+    <input 
+      type="date"
+      class="input"
+      id="data"
+      formControlName="data"
+    />
+    <div *ngIf="formulario.get('data')?.hasError('dataInvalida') && formulario.get('data')?.touched">
+      A data deve ser após o ano 2000 e antes de amanhã.
+    </div>
+
     <label for="modelo">Selecione o modelo do card:</label>
     <div class="container-radio">
       <div class="radio-modelo">
@@ -47,6 +58,7 @@
           <p class="autoria">
             <b> {{ formulario.get("autoria")?.value }} </b>
           </p>
+          <p class="data">{{ formulario.get('data')?.value }}</p>
         </div>
       </div>
 
@@ -70,6 +82,7 @@
           <p class="autoria">
             <b> {{ formulario.get("autoria")?.value }} </b>
           </p>
+          <p class="data">{{ formulario.get("data")?.value }}</p>
         </div>
       </div>
 
@@ -93,6 +106,7 @@
           <p class="autoria">
             <b> {{ formulario.get("autoria")?.value }} </b>
           </p>
+          <p class="data">{{ formulario.get("data")?.value }}</p>
         </div>
       </div>
     </div>
