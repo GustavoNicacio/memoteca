@@ -6,9 +6,10 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class PensamentoService {
 
-  private readonly API = 'http://localhost:3000/personagem'
+  private readonly API = 'http://localhost:3000/pensamentos'
 
   constructor(private http: HttpClient) {}
 
@@ -32,6 +33,6 @@ export class PensamentoService {
   buscarPorId(id: string): Observable<Pensamento> {
     const URL = `${this.API}/${id}`
     return this.http.get<Pensamento>(URL)
-
   }
+
 }
