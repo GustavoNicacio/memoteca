@@ -13,7 +13,8 @@ export class PensamentoComponent implements OnInit {
     id: "0",
     conteudo: "Vai Corinthians!",
     modelo: "modelo1",
-    autoria: "Fleezus"
+    autoria: "Fleezus",
+    data: '05/11/2024'
   }
 
   constructor() { }
