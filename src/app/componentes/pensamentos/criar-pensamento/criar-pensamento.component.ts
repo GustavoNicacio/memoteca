@@ -60,7 +60,7 @@ export class CriarPensamentoComponent implements OnInit {
 
       modelo: ['modelo1']
     })
-    console.log(this.formulario.invalid);
+    console.log(this.formulario);
   }
 
   criarPensamento() {
@@ -78,6 +78,11 @@ export class CriarPensamentoComponent implements OnInit {
 
   cancelar() {
     this.router.navigate(['/listarPensamento'])
+  }
+
+  habilitarBtn(): string {
+    const res: string = (this.formulario.valid) ? 'botao' : 'botao__desabilitado'
+    return res
   }
 
 }

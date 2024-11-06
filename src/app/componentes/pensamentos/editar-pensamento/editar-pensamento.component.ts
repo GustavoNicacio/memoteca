@@ -8,7 +8,7 @@ import { DatePipe } from '@angular/common';
 export function validarData(): ValidatorFn{
   return(control: AbstractControl): ValidationErrors | null => {
     const data = new Date(control.value);
-    
+
     const dataMinima = new Date('2001-01-01');
 
     const dataMaxima = new Date();
@@ -47,19 +47,42 @@ export class EditarPensamentoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.formulario = this.formBuilder.group({
-      conteudo: ['', [Validators.required]],
-      autoria: ['', [Validators.required]],
-      data: ['', [Validators.required, validarData()]],
-      modelo: ['modelo1']
-    });
-
     const id = this.route.snapshot.paramMap.get("id")
     this.service.buscarPorId(id!).subscribe(
       (pensamento) => {
-      this.pensamento = pensamento
-    })
+        this.pensamento = pensamento
+
+        let dataFormatada = '';
+        if (this.pensamento.data) {
+          const [dia, mes, ano] = this.pensamento.data.split('/');
+          dataFormatada = `${ano}-${mes}-${dia}`;
+        }
+
+        this.formulario = this.formBuilder.group({
+          conteudo: [this.pensamento.conteudo, Validators.compose([
+              Validators.required,
+              Validators.pattern(/(.|\s)*\S(.|\s)*/),
+              Validators.maxLength(400)
+            ])],
+          autoria: [this.pensamento.autoria, Validators.compose([
+              Validators.required,
+              Validators.pattern(/(.|\s)*\S(.|\s)*/),
+              Validators.minLength(3)
+            ])],
+
+          data: [dataFormatada, [Validators.required, validarData()]],
+
+          modelo: [this.pensamento.modelo]
+        })
+
+
+
+
+
+      }
+    )
   }
+
 
   editarPensamento(): void{
     const data = this.formulario.value.data;
@@ -72,13 +95,19 @@ export class EditarPensamentoComponent implements OnInit {
       const pensamentoAtualizado: Pensamento = {...this.pensamento, ...this.formulario.value};
 
       this.service.editar(pensamentoAtualizado).subscribe(() => {
-        this.router.navigate(["/listarPensamento"]) 
+        this.router.navigate(["/listarPensamento"])
       });
     }
   }
 
   cancelar() {
     this.router.navigate(["/listarPensamento"])
+  }
+
+
+  habilitarBtn(): string {
+    const res: string = (this.formulario.valid) ? 'botao' : 'botao__desabilitado'
+    return res
   }
 
 }

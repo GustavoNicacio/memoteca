@@ -15,8 +15,13 @@
       formControlName="conteudo"
       placeholder="Digite seu pensamento"
     />
-
-    <div *ngIf="formulario.get('conteudo')?.errors?.['maxlength']">
+    <div class="mensagem__erro" *ngIf="formulario.get('conteudo')?.errors?.['pattern'] && formulario.get('conteudo')?.touched">
+      <small class="erro-mensagem">Digite uma frase válida.</small>
+    </div>
+    <div class="mensagem__erro" *ngIf="formulario.get('conteudo')?.errors?.['required'] && formulario.get('conteudo')?.touched">
+      <small class="erro-mensagem">O conteudo é obrigatório.</small>
+    </div>
+    <div *ngIf="formulario.get('conteudo')?.errors?.['maxlength'] && formulario.get('conteudo')?.touched">
       <small class="erro-mensagem">O conteúdo não pode ter mais de 400 caracteres.</small>
     </div>
 
@@ -28,16 +33,28 @@
       formControlName="autoria"
       placeholder="Digite o(a) autor(a)"
     />
+    <div class="mensagem__erro" *ngIf="formulario.get('autoria')?.errors?.['pattern'] && formulario.get('autoria')?.touched">
+      <small class="erro-mensagem">Digite um(a) autor(a) válida.</small>
+    </div>
+    <div class="mensagem__erro" *ngIf="formulario.get('autoria')?.errors?.['required'] && formulario.get('autoria')?.touched">
+      <small class="erro-mensagem">A autoria é obrigatória</small>
+    </div>
+    <div *ngIf="formulario.get('autoria')?.errors?.['minlength'] && formulario.get('autoria')?.touched">
+      <small class="erro-mensagem">Deve pode ter pelo menos 3 caracteres.</small>
+    </div>
 
     <label for="data">Data</label>
-    <input 
+    <input
       type="date"
       class="input"
       id="data"
       formControlName="data"
     />
-    <div *ngIf="formulario.get('data')?.hasError('dataInvalida') && formulario.get('data')?.touched">
-      A data deve ser após o ano 2000 e antes de amanhã.
+    <div class="mensagem__erro" *ngIf="formulario.get('data')?.errors?.['required'] && formulario.get('data')?.touched">
+      <small class="erro-mensagem">A data é obrigatória</small>
+    </div>
+    <div class="mensagem__erro" *ngIf="formulario.get('data')?.hasError('dataInvalida') && formulario.get('data')?.touched">
+      <small class="erro-mensagem">A data deve ser após o ano 2000 e antes de amanhã.</small>
     </div>
 
     <label for="modelo">Selecione o modelo do card:</label>
@@ -115,7 +132,11 @@
       </div>
     </div>
     <div class="acoes">
-      <button (click)="criarPensamento()" class="botao" [disabled]="formulario.invalid">Salvar</button>
+      <button
+      [disabled]="!formulario.valid"
+      (click)="criarPensamento()"
+      [ngClass]="habilitarBtn()"
+      >Salvar</button>
       <button (click)="cancelar()" class="botao">Cancelar</button>
     </div>
   </form>
