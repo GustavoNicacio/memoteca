@@ -26,6 +26,7 @@ export class CriarPensamentoComponent implements OnInit {
       conteudo: ['', Validators.compose([
         Validators.required,
         Validators.pattern(/(.|\s)*\S(.|\s)*/),
+        Validators.maxLength(400)
       ])],
 
       autoria: ['', Validators.compose([
@@ -36,6 +37,7 @@ export class CriarPensamentoComponent implements OnInit {
 
       modelo: ['modelo1']
     })
+    console.log(this.formulario.invalid);
   }
 
   criarPensamento() {

@@ -16,6 +16,10 @@
       placeholder="Digite seu pensamento"
     />
 
+    <div *ngIf="formulario.get('conteudo')?.errors?.['maxlength']">
+      <small class="erro-mensagem">O conteúdo não pode ter mais de 400 caracteres.</small>
+    </div>
+
     <label for="autoria">Autoria</label>
     <input
       type="textarea"
@@ -97,7 +101,7 @@
       </div>
     </div>
     <div class="acoes">
-      <button (click)="criarPensamento()" class="botao">Salvar</button>
+      <button (click)="criarPensamento()" class="botao" [disabled]="formulario.invalid">Salvar</button>
       <button (click)="cancelar()" class="botao">Cancelar</button>
     </div>
   </form>
