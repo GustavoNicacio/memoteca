@@ -3,6 +3,7 @@ import { Pensamento } from '../pensamento';
 import { PensamentoService } from '../pensamento.service';
 import { Router } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 export function validarData(): ValidatorFn{
   return(control: AbstractControl): ValidationErrors | null => {
@@ -35,7 +36,8 @@ export class CriarPensamentoComponent implements OnInit {
   constructor(
     private service: PensamentoService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private datePipe: DatePipe
   ) { }
 
   ngOnInit(): void {
@@ -60,6 +62,12 @@ export class CriarPensamentoComponent implements OnInit {
   }
 
   criarPensamento() {
+    const data = this.formulario.value.data;
+
+    const dataFormatada = this.datePipe.transform(data, 'dd/MM/yyyy');
+
+    this.formulario.patchValue({ data: dataFormatada })
+
     this.service.criar(this.formulario.value).subscribe(() => {
       this.router.navigate(['/listarPensamento'])
     })
