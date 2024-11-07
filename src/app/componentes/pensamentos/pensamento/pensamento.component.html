@@ -7,6 +7,12 @@
 
   <div class="acoes">
 
+    <div class="acoes">
+      <button class="botao-favorito">
+        <img src="../../../../assets/imagens/icone-favorito-{{mudarIconeFavorito()}}.png" (click)="favoritar()" alt="">
+      </button>
+    </div>
+
     <button class="botao-editar" routerLink="/pensamentos/editarPensamento/{{ pensamento.id }}">
       <img src="../../../../assets/imagens/icone-editar.png">
     </button>

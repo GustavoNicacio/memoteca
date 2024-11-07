@@ -58,7 +58,9 @@ export class CriarPensamentoComponent implements OnInit {
 
       data: ['', [Validators.required, validarData()]],
 
-      modelo: ['modelo1']
+      modelo: ['modelo1'],
+
+      favorito: [false]
     })
     console.log(this.formulario);
   }

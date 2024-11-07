@@ -4,52 +4,57 @@
       "id": "1",
       "conteudo": "We are the champions my friends!!!",
       "autoria": "Queen",
-      "modelo": "modelo1"
+      "data": "29/10/2024",
+      "modelo": "modelo2",
+      "favorito": true
     },
     {
       "id": "2",
       "conteudo": "Na minha máquina funciona!",
       "autoria": "Dev Jhow",
-      "modelo": "modelo2"
+      "data": "29/10/2024",
+      "modelo": "modelo3",
+      "favorito": false
     },
     {
       "id": "3",
       "conteudo": "Continue a codar... continue a codar...",
       "autoria": "Dory programadora",
-      "modelo": "modelo3"
+      "data": "29/10/2024",
+      "modelo": "modelo1",
+      "favorito": true
     },
     {
       "id": "e4b7",
       "conteudo": "A dona aranha subiu pela parede.",
       "autoria": "Renato Alisson",
-      "modelo": "modelo2"
+      "data": "29/10/2024",
+      "modelo": "modelo1",
+      "favorito": false
     },
     {
       "id": "f97a",
       "conteudo": "O rato roeu a roupa do rei de Roma.",
       "autoria": "Anônimo",
       "data": "03/11/2024",
-      "modelo": "modelo2"
+      "modelo": "modelo2",
+      "favorito": false
     },
     {
       "id": "90fb",
       "conteudo": "Se essa rua fosse minha, eu mandava ladrilhar",
       "autoria": "Cantigas",
       "data": "06/11/2024",
-      "modelo": "modelo3"
+      "modelo": "modelo3",
+      "favorito": false
     },
     {
       "id": "8d2a",
       "conteudo": "[...] com pedrinhas bem brilhantes, para o meu amor passar. [...]",
       "autoria": "Cantigas",
       "data": "29/10/2024",
-      "modelo": "modelo3"
-    },
-    {
-      "conteudo": "Teste",
-      "autoria": "Renato Alisson",
       "modelo": "modelo3",
-      "id": "hvMR-aY"
+      "favorito": false
     }
   ]
 }

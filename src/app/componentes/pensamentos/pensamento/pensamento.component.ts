@@ -15,10 +15,10 @@ export class PensamentoComponent implements OnInit {
     modelo: "modelo1",
     autoria: "Fleezus",
     data: '05/11/2024',
-    // favorito: false
+    favorito: false
   }
 
-  constructor() { }
+  constructor(private service: PensamentoService) { }
 
   ngOnInit(): void {
   }
@@ -28,6 +28,18 @@ export class PensamentoComponent implements OnInit {
       return 'pensamento-g'
     }
     return 'pensamento-p'
+  }
+
+  mudarIconeFavorito(): string {
+    if (this.pensamento.favorito == true){
+      return "ativo"
+    } else {
+      return "inativo"
+    }
+  }
+
+  favoritar() {
+    this.service.atualizaFav(this.pensamento).subscribe()
   }
 
 }

@@ -4,5 +4,5 @@ export interface Pensamento {
   autoria: string
   modelo: string
   data: string,
-  // favorito: boolean
+  favorito: boolean
 }

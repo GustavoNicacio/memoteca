@@ -36,7 +36,7 @@ export class EditarPensamentoComponent implements OnInit {
     autoria: '',
     modelo: '',
     data: '',
-    // favorito: false
+    favorito: false
   }
 
   constructor(
@@ -73,7 +73,9 @@ export class EditarPensamentoComponent implements OnInit {
 
           data: [dataFormatada, [Validators.required, validarData()]],
 
-          modelo: [this.pensamento.modelo]
+          modelo: [this.pensamento.modelo],
+
+          favorito: [pensamento.favorito]
         })
 
 

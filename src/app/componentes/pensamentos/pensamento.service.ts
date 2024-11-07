@@ -36,6 +36,11 @@ export class PensamentoService {
     return this.http.put(URL, pensamento)
   }
 
+  atualizaFav(pensamento: Pensamento){
+    pensamento.favorito = !pensamento.favorito
+    return this.editar(pensamento)
+  }
+
   excluir(id: string ): Observable<Pensamento> {
     const URL = `${this.API}/${id}`
     return this.http.delete<Pensamento>(URL)
