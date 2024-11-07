@@ -14,7 +14,8 @@ export class PensamentoComponent implements OnInit {
     conteudo: "Vai Corinthians!",
     modelo: "modelo1",
     autoria: "Fleezus",
-    data: '05/11/2024'
+    data: '05/11/2024',
+    // favorito: false
   }
 
   constructor() { }

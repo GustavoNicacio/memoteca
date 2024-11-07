@@ -35,7 +35,8 @@ export class EditarPensamentoComponent implements OnInit {
     conteudo: '',
     autoria: '',
     modelo: '',
-    data: ''
+    data: '',
+    // favorito: false
   }
 
   constructor(
