@@ -13,5 +13,4 @@ export class BotaoCarregarMaisComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
